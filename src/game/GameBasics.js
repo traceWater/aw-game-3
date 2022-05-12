@@ -11,7 +11,7 @@ class GameBasics {
         this.height = canvas.height;
 
         this.playBoundaries = {
-            top: 160,
+            top: 150,
             bottom: 650,
             left: 100,
             right: 800
