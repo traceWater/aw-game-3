@@ -1,7 +1,7 @@
 // Utils
 import Sounds from './Sounds';
 
-// Positions
+// Positions of... 
 import OpeningPosition from './OpeningPosition';
 
 class GameBasics {
@@ -11,7 +11,7 @@ class GameBasics {
         this.height = canvas.height;
 
         this.playBoundaries = {
-            top: 150,
+            top: 160,
             bottom: 650,
             left: 100,
             right: 800
