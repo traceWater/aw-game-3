@@ -12,7 +12,7 @@ class GameBasics {
 
         this.playBoundaries = {
             top: 150,
-            bottom: 640,
+            bottom: 650,
             left: 100,
             right: 800
         };
