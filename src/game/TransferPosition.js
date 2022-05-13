@@ -2,7 +2,7 @@
 import styles from '../utils/styles';
 
 // Positions
-import InGamePosition from './InGamePosition';
+import ActionPosition from './ActionPosition';
 
 class TransferPosition {
     constructor(level) {
@@ -16,7 +16,7 @@ class TransferPosition {
         this.fontColor -= 1.1;
 
         if (this.fontSize < 1) {
-            play.goToPosition(new InGamePosition(play.settings, this.level));
+            play.goToPosition(new ActionPosition(play.settings, this.level));
         }
     }
 

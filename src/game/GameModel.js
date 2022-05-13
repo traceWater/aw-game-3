@@ -8,13 +8,13 @@ class GameModel {
         this.playBoundaries = { top: 150, bottom: 650, left: 100, right: 800};
             // init val
             this.level = 1; this.score = 0; this.shields = 2;
-        // fps: 1/60
+        // fps
         this.settings = { updateSeconds: (1/60), spaceshipSpeed: 200, bulletSpeed: 130, bulletMaxFrequency: 500,
              ufoLines: 4, ufoColumns: 8, ufoSpeed: 15, ufoSinkingValue: 30, bombSpeed: 75, bombFrequency: 0.05,
              pointsPerUFO: 25,
         };
         
-        // states:                    store:
+            // states:                    store:
             this.positionContainer = []; this.pressedKeys = {};
     }
 
@@ -25,11 +25,10 @@ class GameModel {
     goToPosition(position) {
         if (this.presentPosition()) { this.positionContainer.length = 0;
         }
-
         if (position.entry) { position.entry(this);
         }
 
-        this.positionContainer.push(position);
+            this.positionContainer.push(position);
     }
 
     pushPosition(position) { this.positionContainer.push(position);
@@ -40,8 +39,7 @@ class GameModel {
 
     start() { this.sounds = new Sounds(); this.sounds.init();
 
-        setInterval(() => gameLoop(this), this.settings.updateSeconds * 1000);
-        // to opening position
+    setInterval(() => gameLoop(this), this.settings.updateSeconds * 1000);
         this.goToPosition(new OpeningPosition());
     }
 
@@ -52,12 +50,11 @@ class GameModel {
             this, keyboardCode);
         }
     }
-
     // remove keys
     keyUp(keyboardCode) { delete this.pressedKeys[keyboardCode]; }
 }
 
-function gameLoop(play) {
+let gameLoop = (play) => {
     let currentPosition = play.presentPosition();
 
     if (currentPosition) {

@@ -8,15 +8,9 @@ import PausePosition from './PausePosition';
 import TransferPosition from './TransferPosition';
 import GameOverPosition from './GameOverPosition';
 
-class InGamePosition {
-    constructor(settings, level) {
-        this.settings = settings;
-        this.level = level;
-        this.spaceship = null;
-        this.bullets = [];
-        this.lastBulletTime = null;
-        this.ufos = [];
-        this.bombs = [];
+class ActionPosition {
+    constructor(settings, level) { this.settings = settings; this.level = level; this.spaceship = null;
+        this.bullets = []; this.lastBulletTime = null; this.ufos = []; this.bombs = [];
     }
 
     entry(play) {
@@ -306,4 +300,4 @@ class InGamePosition {
     }
 }
 
-export default InGamePosition;
+export default ActionPosition;
