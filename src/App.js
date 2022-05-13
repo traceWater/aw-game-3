@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
 // Game
-import GameFrame from './game/GameFrame';
+import GameModel from './game/GameModel';
 import Sounds from './game/Sounds';
 
 // Utils
@@ -32,7 +32,7 @@ function App() {
             canvas.width = 900;
             canvas.height = 750;
 
-            const play = new GameFrame(canvas);
+            const play = new GameModel(canvas);
             play.start();
 
             const handleResize = () => resize(canvas);

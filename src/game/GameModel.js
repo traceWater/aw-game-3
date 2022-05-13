@@ -1,34 +1,21 @@
 
 import Sounds from './Sounds';
-
-
 import OpeningPosition from './OpeningPosition';
 
-class GameFrame {
+class GameModel {
     constructor(canvas) {
-        this.ctx = canvas ? canvas.getContext('2d') : null;
-        this.width = canvas.width;
-        this.height = canvas.height;
-
-        this.playBoundaries = { top: 150, bottom: 650, left: 100, right: 800
-        };
-
-        // init val
-        this.level = 1;
-        this.score = 0;
-        this.shields = 2;
-
+        this.ctx = canvas ? canvas.getContext('2d') : null; this.width = canvas.width; this.height = canvas.height;
+        this.playBoundaries = { top: 150, bottom: 650, left: 100, right: 800};
+            // init val
+            this.level = 1; this.score = 0; this.shields = 2;
         // fps: 1/60
         this.settings = { updateSeconds: (1/60), spaceshipSpeed: 200, bulletSpeed: 130, bulletMaxFrequency: 500,
              ufoLines: 4, ufoColumns: 8, ufoSpeed: 15, ufoSinkingValue: 30, bombSpeed: 75, bombFrequency: 0.05,
              pointsPerUFO: 25,
         };
-
-        // states
-        this.positionContainer = [];
-
-        // keys store
-        this.pressedKeys = {};
+        
+        // states:                    store:
+            this.positionContainer = []; this.pressedKeys = {};
     }
 
     presentPosition() {
@@ -80,4 +67,4 @@ function gameLoop(play) {
     }
 }
 
-export default GameFrame;
+export default GameModel;
