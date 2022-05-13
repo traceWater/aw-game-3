@@ -9,7 +9,6 @@ class Sounds {
     constructor() {
         this.muted = false;
     }
-
     init() {
         this.shotSound = new Howl({
             src: shot
@@ -21,7 +20,6 @@ class Sounds {
             src: ufoDeath
         });
     }
-
     playSound(soundName) {
         if (this.muted) {
             return;
