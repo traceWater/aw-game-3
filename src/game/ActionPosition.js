@@ -6,7 +6,7 @@ import styles from '../utils/styles';
 // Positions
 import PausePosition from './PausePosition';
 import TransferPosition from './TransferPosition';
-import GameOverPosition from './GameOverPosition';
+import LevelUpPosition from './LeveUpPosition';
 
 class ActionPosition {
     constructor(settings, level) { this.settings = settings; this.level = level; this.spaceship = null;
@@ -170,7 +170,7 @@ class ActionPosition {
             // if there is a collision we delete the UFO
             if (collision) {
                 this.ufos.splice(indexUfo, 1);
-                play.sounds.playSound('ufoDeath');
+                play.audio.playSound('ufoDeath');
             }
         });
 
@@ -183,7 +183,7 @@ class ActionPosition {
                 // if there is collision we delete the bomb
                 this.bombs.splice(index, 1);
                 // effect on the spaceship
-                play.sounds.playSound('explode');
+                play.audio.playSound('explode');
                 play.shields--;
             }
         });
@@ -195,14 +195,14 @@ class ActionPosition {
                 (ufo.y + ufo.height / 2) >= (this.spaceship.y - this.spaceship.height / 2) &&
                 (ufo.y - ufo.height / 2) >= (this.spaceship.y + this.spaceship.height / 2)) {
                 // if there is a collision the spaceship explodes
-                play.sounds.playSound('explode');
+                play.audio.playAudio('explode');
                 play.shields--;
             }
         });
 
 
         if (play.shields < 0) {
-            play.goToPosition(new GameOverPosition());
+            play.goToPosition(new LevelUpPosition());
         }
 
         // Level completed
@@ -218,7 +218,7 @@ class ActionPosition {
         }
 
         if (keyboardCode === keyCodes.S) {
-            play.sounds.mute();
+            play.audio.mute();
         }
 
         if (keyboardCode === keyCodes.P) {

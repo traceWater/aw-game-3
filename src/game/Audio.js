@@ -1,11 +1,11 @@
 import { Howl } from 'howler';
 
-// Sounds
-import shot from '../sounds/shot.mp3';
-import explosion from '../sounds/explosion.mp3';
-import ufoDeath from '../sounds/shot.mp3';
+// Audio
+import shot from '../audio/shot.mp3';
+import explosion from '../audio/explosion.mp3';
+import ufoDeath from '../audio/shot.mp3';
 
-class Sounds {
+class Audio {
     constructor() {
         this.muted = false;
     }
@@ -46,4 +46,4 @@ class Sounds {
     }
 }
 
-export default Sounds;
+export default Audio;

@@ -1,6 +1,6 @@
 
 import Sounds from './Sounds';
-import OpeningPosition from './OpeningPosition';
+import StartPosition from './StartPosition';
 
 class GameModel {
     constructor(canvas) {
@@ -40,7 +40,7 @@ class GameModel {
     start() { this.sounds = new Sounds(); this.sounds.init();
 
     setInterval(() => gameLoop(this), this.settings.updateSeconds * 1000);
-        this.goToPosition(new OpeningPosition());
+        this.goToPosition(new StartPosition());
     }
 
     keyDown(keyboardCode) { this.pressedKeys[keyboardCode] = true;

@@ -3,7 +3,7 @@ import keys from '../utils/keys';
 import styles from '../utils/styles';
 
 // Positions
-import GameOverPosition from './GameOverPosition';
+import LevelUpPosition from './LevelUpPosition';
 
 class PausePosition {
     draw(play) {
@@ -35,7 +35,7 @@ class PausePosition {
             play.popPosition();
         }
         if (keyboardCode === keys.ESC) {
-            play.goToPosition(new GameOverPosition());
+            play.goToPosition(new LevelUpPosition());
         }
     }
 }

@@ -5,7 +5,7 @@ import styles from '../utils/styles';
 // Positions
 import TransferPosition from './TransferPosition';
 
-class OpeningPosition {
+class StartPosition {
     draw(play) {
         const ctx = play.ctx;
 
@@ -47,4 +47,4 @@ class OpeningPosition {
     }
 }
 
-export default OpeningPosition;
+export default StartPosition;

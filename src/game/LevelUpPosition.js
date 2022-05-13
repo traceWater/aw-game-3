@@ -3,9 +3,9 @@ import styles from '../utils/styles';
 import keys from '../utils/keys';
 
 // Positions
-import OpeningPosition from './OpeningPosition';
+import StartPosition from './StartPosition';
 
-class GameOverPosition {
+class LevelUpPosition {
     draw(play) {
         const ctx = play.ctx;
 
@@ -13,7 +13,7 @@ class GameOverPosition {
         ctx.font = `40px ${styles.font}`;
         ctx.textAlign = 'center';
         ctx.fillStyle = 'red';
-        ctx.fillText('Game Over!', play.width / 2, play.height / 2 - 120);
+        ctx.fillText('Level Up!', play.width / 2, play.height / 2 - 120);
 
         ctx.font = `36px ${styles.font}`;
         ctx.fillStyle = 'red';
@@ -23,9 +23,9 @@ class GameOverPosition {
 
     keyDown(play, keyboardCode) {
         if (keyboardCode === keys.SPACE) {
-            play.goToPosition(new OpeningPosition());
+            play.goToPosition(new StartPosition());
         }
     }
 }
 
-export default GameOverPosition;
+export default LevelUpPosition;
