@@ -1,5 +1,4 @@
 export default {
-    textColor: '#D7DF01',
-    // font: 'Comic Sans MS',
     font: 'sans-serif',
+    textColor: '#D7DF01',
 }

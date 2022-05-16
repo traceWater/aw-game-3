@@ -6,11 +6,17 @@ import styles from '../utils/styles';
 // Positions
 import PausePosition from './PausePosition';
 import TransferPosition from './TransferPosition';
-import LevelUpPosition from './LeveUpPosition';
+import LevelUpPosition from './LevelUpPosition';
 
 class ActionPosition {
-    constructor(settings, level) { this.settings = settings; this.level = level; this.spaceship = null;
-        this.bullets = []; this.lastBulletTime = null; this.ufos = []; this.bombs = [];
+    constructor(settings, level) { 
+        this.settings = settings; 
+        this.level = level; 
+        this.spaceship = null;
+        this.bullets = []; 
+        this.lastBulletTime = null; 
+        this.ufos = []; 
+        this.bombs = [];
     }
 
     entry(play) {
@@ -31,7 +37,9 @@ class ActionPosition {
         this.ufoImage = new Image();
 
         this.objects = new Objects();
-        this.spaceship = this.objects.spaceship(play.width/2, play.playBoundaries.bottom, this.spaceshipImage);
+        this.spaceship = this.objects.spaceship(
+        play.width/2, play.playBoundaries.bottom,
+        this.spaceshipImage);
 
         // Values that change with levels (1.UFO speed, 2.Bomb falling speed, 3.Bomb dropping frequency)
         // 1. UFO speed
@@ -170,7 +178,7 @@ class ActionPosition {
             // if there is a collision we delete the UFO
             if (collision) {
                 this.ufos.splice(indexUfo, 1);
-                play.audio.playSound('ufoDeath');
+                play.audio.playAudio('ufoDeath');
             }
         });
 
@@ -183,7 +191,7 @@ class ActionPosition {
                 // if there is collision we delete the bomb
                 this.bombs.splice(index, 1);
                 // effect on the spaceship
-                play.audio.playSound('explode');
+                play.audio.playAudio('explode');
                 play.shields--;
             }
         });
@@ -243,18 +251,18 @@ class ActionPosition {
         ctx.fillStyle = '#00ff00';
         this.bombs.forEach((bomb) => ctx.fillRect(bomb.x-2, bomb.y, 4, 6));
 
-        // Draw sound and mute info
+        // Draw audio/mute
         ctx.font = `16px ${styles.font}`;
 
-        ctx.fillStyle = '#424242';
+        ctx.fillStyle = 'red';
         ctx.textAlign = 'left';
-        ctx.fillText('S = sound. Sound:', play.playBoundaries.left, play.playBoundaries.bottom + 70);
+        ctx.fillText('S = audio. Audio:', play.playBoundaries.left, play.playBoundaries.bottom + 70);
 
-        const soundStatus = play.sounds.muted ? 'OFF' : 'ON';
-        ctx.fillStyle = play.sounds.muted ? '#ff0000' : '#0b6121';
-        ctx.fillText(soundStatus, play.playBoundaries.left + 375, play.playBoundaries.bottom + 70);
+        const audioStatus = play.audio.muted ? 'OFF' : 'ON';
+        ctx.fillStyle = play.audio.muted ? '#ff0000' : '#0b6121';
+        ctx.fillText(audioStatus, play.playBoundaries.left + 375, play.playBoundaries.bottom + 70);
 
-        ctx.fillStyle = '#424242';
+        ctx.fillStyle = 'red';
         ctx.textAlign = 'right';
         ctx.fillText('Press P to Pause:', play.playBoundaries.right, play.playBoundaries.bottom + 70);
 
@@ -295,7 +303,7 @@ class ActionPosition {
         if (this.lastBulletTime == null || (currentTime - this.lastBulletTime) > this.settings.bulletMaxFrequency) {
             this.bullets.push(this.objects.bullet(this.spaceship.x, this.spaceship.y - this.spaceship.height/2, this.settings.bulletSpeed));
             this.lastBulletTime = currentTime;
-            play.sounds.playSound('shot')
+            play.audio.playAudio('shot')
         }
     }
 }

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 // Game
 import GameModel from './game/GameModel';
-import Sounds from './game/Sounds';
+// import Audio from './game/Audio';
 
 // Utils
 import throttle from 'lodash/throttle';

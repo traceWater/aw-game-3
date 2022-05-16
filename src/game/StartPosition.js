@@ -24,7 +24,7 @@ class StartPosition {
         // Press 'Space' tp start
         ctx.font = `25px ${styles.font}`;
         ctx.fillStyle = styles.textColor;
-        ctx.fillText('press\ space\ bar', play.width/2, play.height/2);
+        ctx.fillText('press spacebar', play.width/2, play.height/2);
 
         // Game controls
         ctx.fillStyle = 'red';

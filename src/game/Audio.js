@@ -10,33 +10,33 @@ class Audio {
         this.muted = false;
     }
     init() {
-        this.shotSound = new Howl({
+        this.shotAudio = new Howl({
             src: shot
         });
-        this.explosionSound = new Howl({
+        this.explosionAudio = new Howl({
             src: explosion
         });
-        this.ufoDeathSound = new Howl({
+        this.ufoDeathAudio = new Howl({
             src: ufoDeath
         });
     }
-    playSound(soundName) {
+    playAudio(audioName) {
         if (this.muted) {
             return;
         }
 
-        switch (soundName) {
+        switch (audioName) {
             case 'shot':
-                this.shotSound.play();
-                this.shotSound.currentTime = 0;
+                this.shotAudio.play();
+                this.shotAudio.currentTime = 0;
                 break;
             case 'ufoDeath':
-                this.ufoDeathSound.play();
-                this.ufoDeathSound.currentTime = 0;
+                this.ufoDeathAudio.play();
+                this.ufoDeathAudio.currentTime = 0;
                 break;
             default:
-                this.explosionSound.play();
-                this.explosionSound.currentTime = 0;
+                this.explosionAudio.play();
+                this.explosionAudio.currentTime = 0;
                 return;
         }
     }

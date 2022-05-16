@@ -1,21 +1,39 @@
 
-import Sounds from './Sounds';
+import Audio from './Audio';
 import StartPosition from './StartPosition';
 
 class GameModel {
     constructor(canvas) {
-        this.ctx = canvas ? canvas.getContext('2d') : null; this.width = canvas.width; this.height = canvas.height;
-        this.playBoundaries = { top: 150, bottom: 650, left: 100, right: 800};
+        this.ctx = canvas ? canvas.getContext('2d') : null;
+        this.width = canvas.width;
+        this.height = canvas.height;
+        this.playBoundaries = { 
+            top: 150,
+            bottom: 650, 
+            left: 100, 
+            right: 800};
             // init val
-            this.level = 1; this.score = 0; this.shields = 2;
+            this.level = 1; 
+            this.score = 0; 
+            this.shields = 2;
         // fps
-        this.settings = { updateSeconds: (1/60), spaceshipSpeed: 200, bulletSpeed: 130, bulletMaxFrequency: 500,
-             ufoLines: 4, ufoColumns: 8, ufoSpeed: 15, ufoSinkingValue: 30, bombSpeed: 75, bombFrequency: 0.05,
-             pointsPerUFO: 25,
+        this.settings = { 
+            updateSeconds: (1/60), 
+            spaceshipSpeed: 200,
+            bulletSpeed: 130,
+            bulletMaxFrequency: 500,
+            ufoLines: 4, 
+            ufoColumns: 8, 
+            ufoSpeed: 15, 
+            ufoSinkingValue: 30,
+            bombSpeed: 75, 
+            bombFrequency: 0.05,
+            pointsPerUFO: 25,
         };
         
             // states:                    store:
-            this.positionContainer = []; this.pressedKeys = {};
+            this.positionContainer = [];
+            this.pressedKeys = {};
     }
 
     presentPosition() {
@@ -23,30 +41,39 @@ class GameModel {
     }
 
     goToPosition(position) {
-        if (this.presentPosition()) { this.positionContainer.length = 0;
+        if (this.presentPosition()) { 
+            this.positionContainer.length = 0;
         }
-        if (position.entry) { position.entry(this);
+        if (position.entry) { 
+            position.entry(this);
         }
 
             this.positionContainer.push(position);
     }
 
-    pushPosition(position) { this.positionContainer.push(position);
+    pushPosition(position) { 
+        this.positionContainer.push(position);
     }
 
-    popPosition() { this.positionContainer.pop();
+    popPosition() { 
+        this.positionContainer.pop();
     }
 
-    start() { this.sounds = new Sounds(); this.sounds.init();
+    start() { 
+        this.audio = new Audio(); 
+        this.audio.init();
 
-    setInterval(() => gameLoop(this), this.settings.updateSeconds * 1000);
+    setInterval(() => gameLoop(this), 
+        this.settings.updateSeconds * 1000);
         this.goToPosition(new StartPosition());
     }
 
-    keyDown(keyboardCode) { this.pressedKeys[keyboardCode] = true;
+    keyDown(keyboardCode) { 
+        this.pressedKeys[keyboardCode] = true;
 
         // keyDown function
-        if (this.presentPosition() && this.presentPosition().keyDown) { this.presentPosition().keyDown(
+        if (this.presentPosition() && this.presentPosition().keyDown) { 
+            this.presentPosition().keyDown(
             this, keyboardCode);
         }
     }
