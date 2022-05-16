@@ -9,7 +9,7 @@ class Objects {
             x,
             y,
             width: 28,
-            height: 356,
+            height: 36,
             spaceshipImage,
         }
     }
