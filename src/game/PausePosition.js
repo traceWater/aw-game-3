@@ -1,6 +1,5 @@
-// Utils
-import keys from '../utils/keys';
-import styles from '../utils/styles';
+import keys from '../input/keys';
+import styles from '../input/styles';
 
 // Positions
 import LevelUpPosition from './LevelUpPosition';

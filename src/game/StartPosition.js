@@ -1,6 +1,5 @@
-// Utils
-import keyCodes from '../utils/keys';
-import styles from '../utils/styles';
+import keyCodes from '../input/keys';
+import styles from '../input/styles';
 
 // Positions
 import TransferPosition from './TransferPosition';
