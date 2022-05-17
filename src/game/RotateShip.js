@@ -25,7 +25,7 @@ function draaw() {
 
 
 // --------------------
-// 5-16-22 add rotate
+
 function rotateImage(imageBase64, rotation, cb) {
     var img = new Image();
      img.src = imageBase64;
