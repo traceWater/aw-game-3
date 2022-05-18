@@ -8,11 +8,13 @@
   display: block;
 
   
-  background-image: url("https://acegif.com/wp-content/gif/outerspace-17.gif");
-  /* background-image: url("starspin1.gif"); */
-  /* background-image: url("bg.png"); */
+  /* background-image: url("https://acegif.com/wp-content/gif/outerspace-17.gif"); */
+  /* background-image: url("https://acegif.com/wp-content/gif/outerspace-17.gif"); */
+  /* background-image: url("https://i0.wp.com/boingboing.net/wp-content/uploads/2013/01/1349129622613.gif"); */
+  /* background-image: url("images/mush.gif"); */
+  background-image: url("images/starspin1.gif");
   
-
+  
   background-size: cover;
   background-position: top center;
 }

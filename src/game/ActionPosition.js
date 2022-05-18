@@ -84,7 +84,7 @@ class ActionPosition {
         // Moving bullets
         this.bullets.forEach((bullet, index) => {
             bullet.y -= updateSeconds * bulletSpeed;
-            // clear bullets exceededing canvas
+            // clear 26bullets exceededing canvas
             if (bullet.y < 0) {
                 this.bullets.splice(index, 1);
             }
