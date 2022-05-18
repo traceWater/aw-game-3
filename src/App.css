@@ -7,7 +7,12 @@
   margin: 0 auto;
   display: block;
 
-  background-image: url("images/bg.png");
+  
+  background-image: url("https://acegif.com/wp-content/gif/outerspace-17.gif");
+  /* background-image: url("starspin1.gif"); */
+  /* background-image: url("bg.png"); */
+  
+
   background-size: cover;
   background-position: top center;
 }
