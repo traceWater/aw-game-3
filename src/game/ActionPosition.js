@@ -1,9 +1,6 @@
-// input
 import Objects from './Objects';
 import keyCodes from '../input/keys';
 import styles from '../input/styles';
-
-// Positions
 import PausePosition from './PausePosition';
 import TransferPosition from './TransferPosition';
 import LevelUpPosition from './LevelUpPosition';
@@ -40,8 +37,6 @@ class ActionPosition {
         this.spaceship = this.objects.spaceship(
         play.width/2, play.playBoundaries.bottom,
         this.spaceshipImage);
-
-        // Values that change with levels (1.UFO speed, 2.Bomb falling speed, 3.Bomb dropping frequency)
         // 1. UFO speed
         this.ufoSpeed = ufoSpeed * (this.level * 7);
         // 2. Bomb falling speed
@@ -89,7 +84,7 @@ class ActionPosition {
         // Moving bullets
         this.bullets.forEach((bullet, index) => {
             bullet.y -= updateSeconds * bulletSpeed;
-            // if bullet flies out from the canvas, it will be cleared
+            // clear bullets exceededing canvas
             if (bullet.y < 0) {
                 this.bullets.splice(index, 1);
             }
@@ -123,8 +118,8 @@ class ActionPosition {
             }
         }
 
-        // Ufos bombing
-        // Sorting ufos - which are at the bottom of each column
+        // bombing
+        // which ufos at bottom of columns
         const frontLineUfos = [];
 
         this.ufos.forEach((ufo) => {
@@ -133,7 +128,7 @@ class ActionPosition {
             }
         });
 
-        // Give a chance for bombing
+        // chance bombing
         for(let i = 0; i < ufoColumns; i ++) {
             const ufo = frontLineUfos[i];
 
@@ -152,13 +147,13 @@ class ActionPosition {
         this.bombs.forEach((bomb, index) => {
             bomb.y += updateSeconds * this.bombSpeed;
 
-            // if a bomb fall out of canvas will be deleted
+            // bomb exceediing canvas deleted
             if (bomb.y > play.height) {
                 this.bombs.splice(index, 1);
             }
         });
 
-        // Ufos bullets collision
+        // Ufos bullet collision
         this.ufos.forEach((ufo, indexUfo) => {
             let collision = false;
 
@@ -168,14 +163,14 @@ class ActionPosition {
                     bullet.x <= (ufo.x + ufo.width / 2) &&
                     bullet.y >= (ufo.y - ufo.height / 2) &&
                     bullet.y <= (ufo.y + ufo.height / 2)) {
-                    // if there is a collision we delete the bullet and set collision true
+                    // collision bullets deleted - set collision true
                     this.bullets.splice(indexBullet, 1);
                     collision = true;
                     play.score += pointsPerUFO;
                 }
             });
 
-            // if there is a collision we delete the UFO
+            // collision ufo deleted
             if (collision) {
                 this.ufos.splice(indexUfo, 1);
                 play.audio.playAudio('ufoDeath');

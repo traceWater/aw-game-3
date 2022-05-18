@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import GameModel from './game/GameModel';
-// import Audio from './game/Audio';
-import throttle from 'lodash/throttle';
 import keyCodes from './input/keys';
+import throttle from 'lodash/throttle';
+// import Audio from './game/Audio';
+
 import './App.css';
 
 
