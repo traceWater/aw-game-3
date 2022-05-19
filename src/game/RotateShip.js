@@ -1,5 +1,3 @@
-
-
 import { fill, random } from "lodash";
 
 let angle = 0.0;

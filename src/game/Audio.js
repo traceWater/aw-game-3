@@ -1,6 +1,4 @@
 import { Howl } from 'howler';
-
-// Audio
 import shot from '../audio/shot.mp3';
 import explosion from '../audio/explosion.mp3';
 import ufoDeath from '../audio/shot.mp3';

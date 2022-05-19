@@ -5,6 +5,7 @@ import PausePosition from './PausePosition';
 import TransferPosition from './TransferPosition';
 import LevelUpPosition from './LevelUpPosition';
 
+
 class ActionPosition {
     constructor(settings, level) { 
         this.settings = settings; 
@@ -120,7 +121,7 @@ class ActionPosition {
         }
 
         // bombing
-        // which ufos at bottom of columns
+        // what ufo at column floor
         const frontLineUfos = [];
 
         this.ufos.forEach((ufo) => {
@@ -164,7 +165,7 @@ class ActionPosition {
                     bullet.x <= (ufo.x + ufo.width / 2) &&
                     bullet.y >= (ufo.y - ufo.height / 2) &&
                     bullet.y <= (ufo.y + ufo.height / 2)) {
-                    // collision bullets deleted - set collision true
+                    // no collision set collision true
                     this.bullets.splice(indexBullet, 1);
                     collision = true;
                     play.score += pointsPerUFO;
@@ -184,7 +185,7 @@ class ActionPosition {
             bomb.x -2 <= (this.spaceship.x + this.spaceship.width / 2) &&
             bomb.y + 6 >= (this.spaceship.y - this.spaceship.height / 2) &&
             bomb.y <= (this.spaceship.y + this.spaceship.height / 2)) {
-                // if there is collision we delete the bomb
+                // no collision deletes bomb
                 this.bombs.splice(index, 1);
                 // effect on the spaceship
                 play.audio.playAudio('explode');
@@ -192,13 +193,13 @@ class ActionPosition {
             }
         });
 
-        // Spaceship and ufos collision
+        
         this.ufos.forEach((ufo) => {
             if ((ufo.x + ufo.width / 2) >= (this.spaceship.x - this.spaceship.width / 2) &&
                 (ufo.x - ufo.width / 2 ) <= (this.spaceship.x + this.spaceship.width / 2) &&
                 (ufo.y + ufo.height / 2) >= (this.spaceship.y - this.spaceship.height / 2) &&
                 (ufo.y - ufo.height / 2) >= (this.spaceship.y + this.spaceship.height / 2)) {
-                // if there is a collision the spaceship explodes
+                // ship explodes
                 play.audio.playAudio('explode');
                 play.shields--;
             }
