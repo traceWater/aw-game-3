@@ -36,8 +36,8 @@ class Objects {
             y,
             line,
             column,
-            width: 32,
-            height: 24,
+            width: 42,
+            height: 10,
             ufoImage,
         };
     }

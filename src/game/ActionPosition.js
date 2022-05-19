@@ -266,12 +266,12 @@ class ActionPosition {
         ctx.textAlign = 'center';
         ctx.fillStyle = '#red';
         ctx.font = `bold 24px ${styles.font}`;
-        ctx.fillText('Score', play.playBoundaries.right, play.playBoundaries.top - 75);
+        ctx.fillText('Score', play.playBoundaries.right, play.playBoundaries.top - 95);
         ctx.font = `bold 30px ${styles.font}`;
         ctx.fillText(play.score, play.playBoundaries.right, play.playBoundaries.top - 25);
 
         ctx.font = `bold 24px ${styles.font}`;
-        ctx.fillText('Level', play.playBoundaries.left, play.playBoundaries.top - 75);
+        ctx.fillText('Level', play.playBoundaries.left, play.playBoundaries.top - 95);
         ctx.font = `bold 30px ${styles.font}`;
         ctx.fillText(play.level, play.playBoundaries.left, play.playBoundaries.top - 25);
 
@@ -280,16 +280,16 @@ class ActionPosition {
 
         if (play.shields) {
             ctx.fillStyle = '#red';
-            ctx.font = `bold 24px ${styles.font}`;
-            ctx.fillText('Shields', play.width / 2, play.playBoundaries.top - 75);
-            ctx.font = `bold 30px ${styles.font}`;
-            ctx.fillText(play.shields, play.width / 2, play.playBoundaries.top - 25);
+            ctx.font = `bold 22px ${styles.font}`;
+            ctx.fillText('Shields', play.width / 2, play.playBoundaries.top - 95);
+            ctx.font = `bold 25px ${styles.font}`;
+            ctx.fillText(play.shields, play.width / 2, play.playBoundaries.top - 55);
         } else {
             ctx.fillStyle = '#ff4d4d';
             ctx.font = `bold 24px ${styles.font}`;
-            ctx.fillText('WARNING', play.width / 2, play.playBoundaries.top - 75);
-            ctx.fillStyle = '#bdbdbd';
-            ctx.fillText('No shields left!', play.width / 2, play.playBoundaries.top - 25);
+            ctx.fillText('WARNING', play.width / 2, play.playBoundaries.top - 95);
+            ctx.fillStyle = 'red';
+            ctx.fillText('No shields left!', play.width / 2, play.playBoundaries.top - 55);
         }
     }
 

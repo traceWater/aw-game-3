@@ -8,7 +8,7 @@ class GameModel {
         this.width = canvas.width;
         this.height = canvas.height;
         this.playBoundaries = { 
-            top: 150,
+            top: 115,
             bottom: 650, 
             left: 100, 
             right: 800};
@@ -19,10 +19,10 @@ class GameModel {
         // fps
         this.settings = { 
             updateSeconds: (1/60), 
-            spaceshipSpeed: 200,
+            spaceshipSpeed: 150,
             bulletSpeed: 130,
-            bulletMaxFrequency: 500,
-            ufoLines: 4, 
+            bulletMaxFrequency: 250,
+            ufoLines: 3, 
             ufoColumns: 8, 
             ufoSpeed: 15, 
             ufoSinkingValue: 30,

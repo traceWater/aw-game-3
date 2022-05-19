@@ -28,7 +28,8 @@ class StartPosition {
         // Game controls
         ctx.fillStyle = 'red';
         // ctx.fillText('Game Controls', play.width/2, play.height/2+130);
-        ctx.fillText('P: Pause S: Mutes  < Left Right >  Space: Fire', play.width/2, play.height/2+180);
+        ctx.fillText('P: Pause S: Mutes  < Left Right >  Space: Fire', play.width/2, play.height/2+280);
+        // was 180 change 280
         // ctx.fillText('S: Mute', play.width/2, play.height/2+220);
         // ctx.fillText('⬅: Move Left', play.width/2, play.height/2+260);
         // ctx.fillText('➡: Move Right', play.width/2, play.height/2+300);
