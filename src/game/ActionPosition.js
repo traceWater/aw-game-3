@@ -40,15 +40,15 @@ class ActionPosition {
         // 1. UFO speed
         this.ufoSpeed = ufoSpeed * (this.level * 7);
         // 2. Bomb falling speed
-        this.bombSpeed = bombSpeed + (this.level * 10);
+        this.bombSpeed = bombSpeed + (this.level * 1);
         // 3. Bomb droping frequency
         this.bombFrequency = bombFrequency + (this.level * 0.05);
 
         // creating ufos
         for(let line = 0; line < ufoLines; line++) {
             for(let column = 0; column < ufoColumns; column++) {
-                const x = (play.width/2) + (column * 40) - ((ufoColumns - 1) * 20); 
-                const y = (play.playBoundaries.top + 30) + (line * 40);
+                const x = (play.width/2) + (column * 70) - ((ufoColumns - 1) * 20); 
+                const y = (play.playBoundaries.top + 30) + (line * 60);
                 const ufo = this.objects.ufo(x, y, line, column, this.ufoImage);
  
                 this.ufos.push(ufo);
@@ -98,7 +98,8 @@ class ActionPosition {
 
             if (reachRight || reachLeft) {
                 this.turnAround *= -1;
-                this.horizontalMoving = 0;
+                // zig 2 was 0
+                this.horizontalMoving = 2;
                 this.verticalMoving = 1;
                 this.ufosAreSinking = true;
             } else {
@@ -263,7 +264,7 @@ class ActionPosition {
 
         // show level and score
         ctx.textAlign = 'center';
-        ctx.fillStyle = '#bdbdbd';
+        ctx.fillStyle = '#red';
         ctx.font = `bold 24px ${styles.font}`;
         ctx.fillText('Score', play.playBoundaries.right, play.playBoundaries.top - 75);
         ctx.font = `bold 30px ${styles.font}`;
@@ -278,7 +279,7 @@ class ActionPosition {
         ctx.textAlign = 'center';
 
         if (play.shields) {
-            ctx.fillStyle = '#bdbdbd';
+            ctx.fillStyle = '#red';
             ctx.font = `bold 24px ${styles.font}`;
             ctx.fillText('Shields', play.width / 2, play.playBoundaries.top - 75);
             ctx.font = `bold 30px ${styles.font}`;
