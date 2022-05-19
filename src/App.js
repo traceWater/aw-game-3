@@ -6,7 +6,6 @@ import throttle from 'lodash/throttle';
 
 import './App.css';
 
-
 const resize = (canvas) => {
     if (!canvas) {
         return;

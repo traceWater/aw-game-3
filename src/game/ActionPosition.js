@@ -49,7 +49,7 @@ class ActionPosition {
         for(let line = 0; line < ufoLines; line++) {
             for(let column = 0; column < ufoColumns; column++) {
                 const x = (play.width/2) + (column * 70) - ((ufoColumns - 1) * 20); 
-                const y = (play.playBoundaries.top + 30) + (line * 60);
+                const y = (play.playBoundaries.top + 10) + (line * 60);
                 const ufo = this.objects.ufo(x, y, line, column, this.ufoImage);
  
                 this.ufos.push(ufo);

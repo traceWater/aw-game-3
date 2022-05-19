@@ -31,27 +31,27 @@
     $(document).ready(function() {
 
        $("#hide").click(function(){
-          $(".target").hide( "explode", {pieces: 16 }, 2000 );
+          $(".target").hide( "explode", {pieces: 26 }, 2000 );
        });
 
        $("#show").click(function(){
-          $(".target").show( "explode", {pieces: 46}, 2000 );
+          $(".target").show( "explode", {pieces: 16}, 2000 );
        });
+       
    
     });
     </script>
-		
+		<div>
     <style>
-       p {background-color:#bca; width:50px; border:1px solid rgb(124, 127, 130);}
-       div{width:1300px; height: 5px; background:red;}
+       p {background-color:rgb(83, 87, 122); width:120px; border:1px solid rgb(56, 62, 56);}
+       div{width:1300px; height: 5px; background:rgb(255, 34, 0);}
     </style>
-
+    </div>
   </head>
   <body>
-    <p>Ready Weapons</p>
 		
-      <button id = "hide"> Hide </button>
-      <button id = "show"> Show</button> 
+      <button id = "hide">open </button>
+      <button id = "show">shut</button> 
   
       <div class = "target">
       </div>

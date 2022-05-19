@@ -9,7 +9,7 @@ class GameModel {
         this.height = canvas.height;
         this.playBoundaries = { 
             top: 115,
-            bottom: 650, 
+            bottom: 600, 
             left: 100, 
             right: 800};
             // init val
