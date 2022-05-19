@@ -10,7 +10,7 @@ class LevelUpPosition {
         ctx.font = `40px ${styles.font}`;
         ctx.textAlign = 'center';
         ctx.fillStyle = 'red';
-        ctx.fillText('Level Up!', play.width / 2, play.height / 2 - 120);
+        ctx.fillText('Game Over Level Up!', play.width / 2, play.height / 2 - 120);
 
         ctx.font = `36px ${styles.font}`;
         ctx.fillStyle = 'red';

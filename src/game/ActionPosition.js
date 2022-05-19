@@ -43,7 +43,7 @@ class ActionPosition {
         // 2. Bomb falling speed
         this.bombSpeed = bombSpeed + (this.level * 1);
         // 3. Bomb droping frequency
-        this.bombFrequency = bombFrequency + (this.level * 0.05);
+        this.bombFrequency = bombFrequency + (this.level * 0.08);
 
         // creating ufos
         for(let line = 0; line < ufoLines; line++) {
@@ -256,7 +256,7 @@ class ActionPosition {
         ctx.fillText('S = audio. Audio:', play.playBoundaries.left, play.playBoundaries.bottom + 70);
 
         const audioStatus = play.audio.muted ? 'OFF' : 'ON';
-        ctx.fillStyle = play.audio.muted ? '#ff0000' : '#0b6121';
+        ctx.fillStyle = play.audio.muted ? '#ff0000' : 'red';
         ctx.fillText(audioStatus, play.playBoundaries.left + 375, play.playBoundaries.bottom + 70);
 
         ctx.fillStyle = 'red';

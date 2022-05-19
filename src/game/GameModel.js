@@ -25,7 +25,7 @@ class GameModel {
             ufoLines: 3, 
             ufoColumns: 8, 
             ufoSpeed: 15, 
-            ufoSinkingValue: 30,
+            ufoSinkingValue: 40,
             bombSpeed: 75, 
             bombFrequency: 0.05,
             pointsPerUFO: 25,
