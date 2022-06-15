@@ -8,7 +8,7 @@ class Objects {
         return {
             x,
             y,
-            width: 28,
+            width: 27,
             height: 36,
             spaceshipImage,
         }
